@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+:root {
+    --light-gray: #E6EFF5;
+    --white: #FFFFFF;
+    --cyan: #4BBFBD;
+    --cyan-dark: #2AB3B1;
+    --bright-yellow: #c0df33;
+    --gray: #9AA7BE;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    overflow-wrap: break-word;
+    overflow: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: var(--white);
+    font-family: 'Karla', sans-serif;
+    background-color: var(--light-gray);
+}
+
+body,
+html,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    font-size: 0.875rem;
+    letter-spacing: -0.011rem;
+    line-height: 1.25rem;
+    color: var(--white);
+    opacity: 0.75;
+    text-decoration: none;
+}
+
+p {
+    letter-spacing: -0.013rem;
+    line-height: 1.625rem;
+}
+
+h1,
+h2 {
+    font: weight 700;
+}
+
+
+h2 {
+    font-size: 1.125rem;
+    letter-spacing: -0.014rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 43.75rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.imposter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "community community"
+        "subscription about";
+    margin: auto 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.938rem 1.875rem 0 rgba(0, 81, 171, 0.15);
+}
+
+.community,
+.subscription,
+.about {
+    padding: 2.5rem;
+}
+
+/* COMMUNITY */
+
+.community {
+    grid-area: community;
+    background-color: var(--white);
+}
+
+.community h1 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: var(--cyan-dark);
+    letter-spacing: -0.019rem;
+}
+
+.community h2 {
+    color: var(--bright-yellow);
+    margin: 1.5rem 0 0.625rem 0;
+}
+
+.community p {
+    color: var(--gray);
+    line-height: 1.625rem;
+}
+
+/* SUBSCRIPTION */
+
+.subscription {
+    grid-area: subscription;
+    background-color: var(--cyan-dark);
+}
+
+.subscription .price {
+    display: flex;
+    align-items: center;
+    margin: 1.063rem 0 0.25rem 0;
+}
+
+.subscription .price span:first-child {
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.025rem;
+}
+
+.subscription .price span+span {
+    margin-left: 0.75rem;
+    letter-spacing: -0.013rem;
+    opacity: 0.5;
+}
+
+.subscription button {
+    display: block;
+    width: 100%;
+    margin: 1.625rem 0 0 0;
+    padding: 0.938rem;
+    border-radius: 0.313rem;
+    font-weight: 700;
+    font-family: 'Karla', sans-serif;
+    font-size: 1rem;
+    color: var(--white);
+    letter-spacing: -0.013rem;
+    background-color: var(--bright-yellow);
+    border: 0;
+    outline: none;
+    transition: box-shadow 500ms;
+    box-shadow: 0 0.625rem 0.625rem 0 rgba(0, 0, 0, 0.10);
+    cursor: pointer;
+}
+
+.subscription button:hover {
+    box-shadow: inherit;
+}
+
+/* ABOUT */
+
+.about {
+    grid-area: about;
+    background-color: var(--cyan);
+}
+
+.about ul {
+    margin-top: 1.063rem;
+}
+
+.about ul li:hover a {
+    text-decoration: underline;
+}
+
+@media screen and (max-width:36rem) {
+
+    main {
+        margin: 1.25rem auto;
+    }
+
+    .imposter {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "community"
+            "subscription"
+            "about";
+    }
+
+    .price {
+        border-radius: 0.313rem;
+    }
+
+    .community,
+    .subscription,
+    .about {
+        padding: 1.5rem;
+    }
+
+    .community h1 {
+        font-size: 1.25rem;
+        line-height: 1.438rem;
+        color: var(--cyan-dark);
+        letter-spacing: -0.016rem;
+    }
+
+    .community h2 {
+        font-size: 0.938rem;
+        line-height: 1.25rem;
+        letter-spacing: -0.012rem;
+        margin: 1.5rem 0 1rem 0;
+    }
+
+    .price__container {
+        display: block;
+    }
+}
